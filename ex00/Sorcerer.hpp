@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 17:55:15 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/07 20:26:09 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/07 21:44:00 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define SORCERER_HPP
 #include <iostream>
 #include <string>
-
-class Victim;
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -28,11 +27,11 @@ class Sorcerer
 		Sorcerer(const Sorcerer &_Sorcerer);
 		~Sorcerer();
 		Sorcerer &operator = (const Sorcerer &_Sorcerer);
-		void		polymorph(Victim const &_Victim) const;
+		void		polymorph(Victim const &victim) const;
 		void		setName(const std::string &name);
 		void		setTitle(const std::string &title);
-		std::string	getName(void);
-		std::string	getTitle(void);
+		const std::string	getName(void) const;
+		const std::string	getTitle(void) const;
 };
 std::ostream &operator << (std::ostream &out, Sorcerer &_Sorcerer);
 #endif

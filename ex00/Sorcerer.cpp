@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 18:48:14 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/07 20:33:11 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/07 21:48:02 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Sorcerer::Sorcerer(const std::string &name, const std::string &title)
 {
 	this->name = name;
 	this->title = title;
-	std::cout << this->name << this->title << ", is born" << std::endl;
+	std::cout << this->name << " " << this->title << ", is born" << std::endl;
 }
 
 Sorcerer::Sorcerer(const Sorcerer &_Sorcerer)
@@ -45,9 +45,9 @@ Sorcerer& Sorcerer::operator = (const Sorcerer &_Sorcerer)
 	return (*this);
 }
 
-void	Sorcerer::polymorph(Victim const &_Victim) const
+void	Sorcerer::polymorph(Victim const &victim) const
 {
-	_Victim.getPolymorphed();
+	victim.getPolymorphed();
 }
 
 void	Sorcerer::setName(const std::string &name)
@@ -60,12 +60,12 @@ void	Sorcerer::setTitle(const std::string &title)
 	this->title = title;
 }
 
-std::string	Sorcerer::getName(void)
+const std::string	Sorcerer::getName(void) const
 {
 	return (this->name);
 }
 
-std::string Sorcerer::getTitle(void)
+const std::string Sorcerer::getTitle(void) const
 {
 	return (this->title);
 }
