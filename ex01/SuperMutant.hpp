@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:54:40 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 15:25:56 by hyeolee          ###   ########.fr       */
+/*   Created: 2021/07/08 17:38:05 by hyeolee           #+#    #+#             */
+/*   Updated: 2021/07/08 20:52:52 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include "Victim.hpp"
-class Peon : public Victim
+#ifndef SUPERMUTANT_HPP
+# define SUPERMUTANT_HPP
+# include "Enemy.hpp"
+class SuperMutant : public Enemy
 {
 	private:
-		Peon();
 	public:
-		Peon(const std::string &name);
-		Peon(const Peon &_peon);
-		virtual ~Peon();
-		Peon & operator = (const Peon &_peon);
-		void	getPolymorphed() const;
+		SuperMutant();
+		SuperMutant(const SuperMutant &_SuperMutant);
+		virtual ~SuperMutant();
+		SuperMutant &operator = (const SuperMutant &_SuperMutant);
+		virtual void	takeDamage(int damage);
 };
-std::ostream & operator << (std::ostream &out, Peon &_peon);
 #endif

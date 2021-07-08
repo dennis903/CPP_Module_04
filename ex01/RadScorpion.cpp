@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:54:40 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 15:25:56 by hyeolee          ###   ########.fr       */
+/*   Created: 2021/07/08 18:10:15 by hyeolee           #+#    #+#             */
+/*   Updated: 2021/07/08 18:17:34 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include "Victim.hpp"
-class Peon : public Victim
+#include "RadScorpion.hpp"
+
+RadScorpion::RadScorpion()
 {
-	private:
-		Peon();
-	public:
-		Peon(const std::string &name);
-		Peon(const Peon &_peon);
-		virtual ~Peon();
-		Peon & operator = (const Peon &_peon);
-		void	getPolymorphed() const;
-};
-std::ostream & operator << (std::ostream &out, Peon &_peon);
-#endif
+	this->hp = 80;
+	this->type = "RadScorpion";
+	std::cout << "* click click click *" << std::endl;
+}
+
+RadScorpion::RadScorpion(const RadScorpion &_RadScorpion)
+{
+	*this = _RadScorpion;
+}
+
+RadScorpion::~RadScorpion()
+{
+	std::cout << "* SPROTCH *" << std::endl;
+}

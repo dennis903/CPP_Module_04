@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:54:40 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 15:25:56 by hyeolee          ###   ########.fr       */
+/*   Created: 2021/07/08 18:10:00 by hyeolee           #+#    #+#             */
+/*   Updated: 2021/07/08 20:52:43 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include "Victim.hpp"
-class Peon : public Victim
+#ifndef RADSCORPION_HPP
+# define RADSCORPION_HPP
+# include "Enemy.hpp"
+class RadScorpion : public Enemy
 {
 	private:
-		Peon();
 	public:
-		Peon(const std::string &name);
-		Peon(const Peon &_peon);
-		virtual ~Peon();
-		Peon & operator = (const Peon &_peon);
-		void	getPolymorphed() const;
+		RadScorpion();
+		RadScorpion(const RadScorpion &_RadScorpion);
+		virtual ~RadScorpion();
+		RadScorpion &operator = (const RadScorpion &_RadScorpion);
 };
-std::ostream & operator << (std::ostream &out, Peon &_peon);
 #endif

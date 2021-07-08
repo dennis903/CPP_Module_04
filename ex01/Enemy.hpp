@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:54:40 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 15:25:56 by hyeolee          ###   ########.fr       */
+/*   Created: 2021/07/08 16:14:54 by hyeolee           #+#    #+#             */
+/*   Updated: 2021/07/08 18:00:37 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include "Victim.hpp"
-class Peon : public Victim
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
+# include <iostream>
+class Enemy
 {
-	private:
-		Peon();
+	protected:
+		int			hp;
+		std::string	type;
+		Enemy();
 	public:
-		Peon(const std::string &name);
-		Peon(const Peon &_peon);
-		virtual ~Peon();
-		Peon & operator = (const Peon &_peon);
-		void	getPolymorphed() const;
+		Enemy(int hp, std::string const &type);
+		Enemy(const Enemy &_Enemy);
+		virtual ~Enemy();
+		Enemy &operator = (const Enemy &_Enemy);
+		void	setHP(int hp);
+		void	setType(std::string &type);
+		int		getHP(void) const;
+		std::string getType(void) const;
+		virtual void takeDamage(int damage);
 };
-std::ostream & operator << (std::ostream &out, Peon &_peon);
 #endif
