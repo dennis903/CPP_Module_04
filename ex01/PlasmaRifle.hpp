@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 15:48:34 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 15:58:20 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 22:00:15 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PlasmaRifle : public AWeapon
 		PlasmaRifle();
 		PlasmaRifle(const PlasmaRifle &_PlasmaRifle);
 		PlasmaRifle &operator = (const PlasmaRifle &_PlasmaRifle);
-		virtual ~PlasmaRifle();
-		void	attack() const;
+		virtual ~PlasmaRifle() override;
+		void	attack() const override;
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 17:38:05 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 20:52:52 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 21:52:52 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ class SuperMutant : public Enemy
 		SuperMutant(const SuperMutant &_SuperMutant);
 		virtual ~SuperMutant();
 		SuperMutant &operator = (const SuperMutant &_SuperMutant);
-		virtual void	takeDamage(int damage);
+		virtual void	takeDamage(int damage) override;
 };
 #endif

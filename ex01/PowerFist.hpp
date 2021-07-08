@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:02:03 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 16:10:15 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 21:53:25 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ class PowerFist : public AWeapon
 		PowerFist(const PowerFist &_PowerFist);
 		virtual ~PowerFist();
 		PowerFist &operator = (const PowerFist &_PowerFist);
-		void	attack() const;
+		void	attack() const override;
 };
 #endif
