@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:14:38 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 18:01:02 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:55:05 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Enemy& Enemy::operator = (const Enemy &_Enemy)
 		return (*this);
 	this->hp = _Enemy.hp;
 	this->type = _Enemy.type;
+	return (*this);
 }
 
 void	Enemy::setHP(int hp)

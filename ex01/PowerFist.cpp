@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:06:39 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 16:10:47 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:55:52 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ PowerFist& PowerFist::operator = (const PowerFist &_PowerFist)
 	this->name = _PowerFist.name;
 	this->damage = _PowerFist.damage;
 	this->apcost = _PowerFist.apcost;
+	return (*this);
 }
 
 void	PowerFist::attack() const

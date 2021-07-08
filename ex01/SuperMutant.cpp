@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 18:03:26 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 18:09:11 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 21:04:03 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,21 @@ SuperMutant::SuperMutant()
 SuperMutant::SuperMutant(const SuperMutant &_SuperMutant)
 {
 	*this = _SuperMutant;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant::~SuperMutant()
 {
 	std::cout << "Aaargh..." << std::endl;
+}
+
+SuperMutant&	SuperMutant::operator = (const SuperMutant &_SuperMutant)
+{
+	if (this == &_SuperMutant)
+		return (*this);
+	this->hp = _SuperMutant.hp;
+	this->type = _SuperMutant.type;
+	return (*this);
 }
 
 void	SuperMutant::takeDamage(int damage)

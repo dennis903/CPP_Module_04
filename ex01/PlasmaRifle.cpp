@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 15:52:01 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 16:01:30 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:55:29 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ PlasmaRifle& PlasmaRifle::operator = (const PlasmaRifle &_PlasmaRifle)
 	this->name = _PlasmaRifle.name;
 	this->damage = _PlasmaRifle.damage;
 	this->apcost = _PlasmaRifle.apcost;
+	return (*this);
 }
 
 PlasmaRifle::~PlasmaRifle()

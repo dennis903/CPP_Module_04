@@ -6,14 +6,17 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 19:55:57 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 20:48:51 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/08 21:35:47 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : name("No name"), ap(40), Weapon(NULL)
+Character::Character()
 {
+	this->Weapon = NULL;
+	this->name = "No name";
+	this->ap = 40;
 }
 
 Character::Character(std::string const &name)
@@ -74,31 +77,36 @@ void	Character::recoverAP()
 
 void	Character::attack(Enemy *_Enemy)
 {
-	if (this->getWeapon() == NULL)
+	if (this->Weapon == NULL)
 		return ;
 	else
 	{
-		if (this->ap - this->getWeapon()->getAPCost() < 0)
+		if (this->ap - this->Weapon->getAPCost() < 0)
 		{
 			std::cout << "Not enough AP" << std::endl;
 			return ;
 		}
 		else
 		{
-			std::cout << this->name << " attack " << _Enemy->getType() << " with  a " << this->getWeapon()->getName() << std::endl;
-			this->ap -= this->getWeapon()->getAPCost();
-			_Enemy->takeDamage(this->getWeapon()->getDamage());
+			std::cout << this->name << " attacks " << _Enemy->getType() << " with a " << this->Weapon->getName() << std::endl;
+			this->ap -= this->Weapon->getAPCost();
+			this->Weapon->attack();
+			_Enemy->takeDamage(this->Weapon->getDamage());
 			if (_Enemy->getHP() == 0)
-				_Enemy->~Enemy();
+				delete _Enemy;
 		}
 	}
 }
 
+void	Character::equip(AWeapon *_AWeapon)
+{
+	this->Weapon = _AWeapon;
+}
 
 std::ostream &operator << (std::ostream &out, const Character &_Character)
 {
 	if (_Character.getWeapon() == NULL)
-		out << _Character.getName() << " has " << _Character.getAP() << " and is unarmed" << std::endl;
+		out << _Character.getName() << " has " << _Character.getAP() << " AP and is unarmed" << std::endl;
 	else
 		out << _Character.getName() << " has " << _Character.getAP() << " and " << "wields a " << _Character.getWeapon()->getName() << std::endl;
 	return (out);
