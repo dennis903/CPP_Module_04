@@ -6,21 +6,27 @@
 
 int main()
 {
-	ISpaceMarine* bob = new TacticalMarine;
-	ISpaceMarine* jim = new AssaultTerminator;
+	ISpaceMarine* Marine = new TacticalMarine;
+	ISpaceMarine* Assault = new AssaultTerminator;
+	ISpaceMarine* Firebet = new TacticalMarine;
+	ISpaceMarine* Medic = new AssaultTerminator;
+	ISpaceMarine* SiegeTank = Assault->clone();
+	ISquad* First_Squad = new Squad;
 
-	ISquad* vlc = new Squad;
-	vlc->push(bob);
-	vlc->push(jim);
-	for (int i = 0; i < vlc->getCount(); ++i)
+	First_Squad->push(Marine);
+	First_Squad->push(Assault);
+	First_Squad->push(Medic);
+	First_Squad->push(Firebet);
+	First_Squad->push(SiegeTank);
+
+	for (int i = 0; i < First_Squad->getCount(); i++)
 	{
-		ISpaceMarine* cur = vlc->getUnit(i);
-		cur->battleCry();
-		cur->rangedAttack();
-		cur->meleeAttack();
+		std::cout << "=========" << i << " unit attack ========" << std::endl;
+		First_Squad->getUnit(i)->battleCry();
+		First_Squad->getUnit(i)->meleeAttack();
+		First_Squad->getUnit(i)->rangedAttack();
 	}
 
-	delete vlc; // why delete here?
-
+	delete First_Squad;
 	return 0;
 }
