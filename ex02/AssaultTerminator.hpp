@@ -2,7 +2,7 @@
 # define ASSAULTTERMINATOR_HPP
 # include "ISpaceMarine.hpp"
 
-class AssaultTerminator 
+class AssaultTerminator : public ISpaceMarine 
 {
 	private:
 	public:
