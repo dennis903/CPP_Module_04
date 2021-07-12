@@ -27,7 +27,7 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator &_AssaultTerminator
 
 AssaultTerminator::~AssaultTerminator()
 {
-    std::cout << "I’ll be back..." << std::endl;
+    std::cout << "I will be back..." << std::endl;
 }
 
 AssaultTerminator& AssaultTerminator::operator = (const AssaultTerminator &_AssaultTerminator)

@@ -12,7 +12,7 @@
 
 #include "Squad.hpp"
 
-Squad::Squad() : count(0), units(nullptr)
+Squad::Squad() : count(0), units(NULL)
 {
 }
 
@@ -85,7 +85,7 @@ int		Squad::push(ISpaceMarine* Marine)
 {
 	int		i;
 
-	if (this->units == nullptr)
+	if (Marine == NULL)
 		return (this->count);
 	i = 0;
 	while (i < count)
@@ -103,6 +103,7 @@ int		Squad::push(ISpaceMarine* Marine)
 	}
 	delete units;
 	temp[i] = Marine;
+	this->units = temp;
 	this->count++;
 	return (count);
 }
