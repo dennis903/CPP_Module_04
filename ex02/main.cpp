@@ -20,7 +20,7 @@ int main()
 		cur->meleeAttack();
 	}
 
-	delete vlc;
+	delete vlc; // why delete here?
 
 	return 0;
 }
