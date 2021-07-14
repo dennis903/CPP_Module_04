@@ -3,6 +3,8 @@
 # include "IMateriaSource.hpp"
 class MateriaSource : public IMateriaSource
 {
+    private:
+        AMateria* Inventory[4];
     public:
         MateriaSource();
         MateriaSource(const MateriaSource &_MateriaSource);
