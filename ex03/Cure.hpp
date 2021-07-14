@@ -3,14 +3,14 @@
 # include "AMateria.hpp"
 # include <iostream>
 
-class Cure : public AMateria
+class Ice : public AMateria
 {
     private:
     public:
-        Cure();
-        Cure(const Cure &_Cure);
-        ~Cure();
-        Cure &operator = (const Cure &_Cure);
+        Ice();
+        Ice(const Ice &_Ice);
+        ~Ice();
+        Ice &operator = (const Ice &_Ice);
         AMateria* clone() const override;
         void    use(ICharacter& target) override;
 };
