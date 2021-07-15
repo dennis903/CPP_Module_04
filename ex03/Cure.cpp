@@ -1,19 +1,19 @@
 #include "Cure.hpp"
 
-Ice::Ice() : AMateria("cure")
+Cure::Cure() : AMateria("cure")
 {
 }
 
-Ice::Ice(const Ice &_Cure)
+Cure::Cure(const Cure &_Cure)
 {
     *this = _Cure;
 }
 
-Ice::~Ice()
+Cure::~Cure()
 {
 }
 
-Ice& Ice::operator = (const Ice &_Cure)
+Cure& Cure::operator = (const Cure &_Cure)
 {
     if (this == &_Cure)
         return (*this);
@@ -22,14 +22,14 @@ Ice& Ice::operator = (const Ice &_Cure)
     return (*this);
 }
 
-AMateria* Ice::clone() const
+AMateria* Cure::clone() const
 {
-    AMateria *cure = new Ice;
+    AMateria *cure = new Cure;
     return (cure);
 }
 
-void    Ice::use(ICharacter& target)
+void    Cure::use(ICharacter& target)
 {
-    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "s wounds *" << std::endl;
     AMateria::use(target);
 }

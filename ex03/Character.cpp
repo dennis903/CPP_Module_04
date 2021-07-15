@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include <iostream>
 
 Character::Character() : name("No name")
 {
@@ -45,7 +46,7 @@ Character& Character::operator = (const Character &_Character)
     for (int i = 0; i < 4; i++)
     {
         if (this->Inventory[i] != NULL)
-            delete this->Inventory;
+            delete this->Inventory[i];
     }
     for (int i = 0; i < 4; i++)
     {
@@ -93,7 +94,9 @@ void    Character::use(int idx, ICharacter& target)
     else if (idx >= 4)
         return ;
     else if (this->Inventory[idx] == NULL)
+    {
         return ;
+    }
     else
         this->Inventory[idx]->use(target);
 }

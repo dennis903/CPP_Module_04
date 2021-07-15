@@ -8,6 +8,7 @@
 
 int main()
 {
+	std::cout << "============ Default ============" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -28,6 +29,35 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	{
+		std::cout << "======== When Type does not exist ========" << std::endl;
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		std::cout << src->createMateria("other") << std::endl;
+		delete src;
+	}
+	{
+		std::cout << "======== XP projection ========" << std::endl;
 
+		Ice *ice = new Ice;
+		ICharacter* me = new Character("me");
+		ICharacter* enemy = new Character("enemy");
+
+		me->equip(ice);
+		std::cout<< ice->getXP() << std::endl;
+		me->use(0, *enemy);
+		std::cout<< ice->getXP() << std::endl;
+		me->use(0, *enemy);
+		std::cout<< ice->getXP() << std::endl;
+		me->use(0, *enemy);
+		std::cout<< ice->getXP() << std::endl;
+		me->use(0, *enemy);
+		std::cout<< ice->getXP() << std::endl;
+
+		delete ice;
+		delete me;
+		delete enemy;
+	}
 	return 0;
 }

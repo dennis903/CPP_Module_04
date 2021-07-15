@@ -1,6 +1,7 @@
 #ifndef ICE_H
 # define ICE_H
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 # include <iostream>
 
 class Ice : public AMateria

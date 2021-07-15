@@ -1,16 +1,17 @@
 #ifndef CURE_H
 # define CURE_H
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 # include <iostream>
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
     private:
     public:
-        Ice();
-        Ice(const Ice &_Ice);
-        ~Ice();
-        Ice &operator = (const Ice &_Ice);
+        Cure();
+        Cure(const Cure &_Cure);
+        ~Cure();
+        Cure &operator = (const Cure &_Cure);
         AMateria* clone() const override;
         void    use(ICharacter& target) override;
 };

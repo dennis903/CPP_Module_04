@@ -1,5 +1,5 @@
 #include "AMateria.hpp"
-
+#include <iostream>
 AMateria::AMateria() : _xp(0), type("No name")
 {
 }
@@ -40,6 +40,6 @@ unsigned int AMateria::getXP() const
 
 void    AMateria::use(ICharacter& target)
 {
-    this->_xp += 10; 
+    this->_xp += 10;
 }
 
