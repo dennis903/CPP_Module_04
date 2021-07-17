@@ -12,7 +12,7 @@ class Cure : public AMateria
         Cure(const Cure &_Cure);
         ~Cure();
         Cure &operator = (const Cure &_Cure);
-        AMateria* clone() const override;
-        void    use(ICharacter& target) override;
+        AMateria* clone() const;
+        void    use(ICharacter& target);
 };
 #endif

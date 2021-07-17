@@ -20,7 +20,7 @@ class PlasmaRifle : public AWeapon
 		PlasmaRifle();
 		PlasmaRifle(const PlasmaRifle &_PlasmaRifle);
 		PlasmaRifle &operator = (const PlasmaRifle &_PlasmaRifle);
-		virtual ~PlasmaRifle() override;
-		void	attack() const override;
+		virtual ~PlasmaRifle();
+		void	attack() const;
 };
 #endif
