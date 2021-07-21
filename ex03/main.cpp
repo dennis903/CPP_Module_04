@@ -55,7 +55,6 @@ int main()
 		me->use(0, *enemy);
 		std::cout<< ice->getXP() << std::endl;
 
-		delete ice;
 		delete me;
 		delete enemy;
 	}

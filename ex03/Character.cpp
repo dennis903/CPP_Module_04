@@ -84,7 +84,7 @@ void    Character::unequip(int idx)
     else if (this->Inventory[idx] == NULL)
         return ;
     else
-        this->Inventory[idx] == NULL;
+        this->Inventory[idx] = NULL;
 }
 
 void    Character::use(int idx, ICharacter& target)
