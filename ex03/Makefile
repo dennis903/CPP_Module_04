@@ -1,6 +1,6 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
-TARGET = ex02
+TARGET = ex03
 
 OBJS = AMateria.cpp \
 		Character.cpp \
