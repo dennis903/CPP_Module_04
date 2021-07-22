@@ -1,40 +1,50 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 20:49:51 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/08 21:36:35 by hyeolee          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-#include "AWeapon.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
-#include "RadScorpion.hpp"
-#include "SuperMutant.hpp"
-#include "Enemy.hpp"
-#include "Character.hpp"
-
-int main()
+int		main()
 {
-	Character* me = new Character("me");
-	std::cout << *me;
-	Enemy* b = new RadScorpion();
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
-	me->equip(pr);
-	std::cout << *me;
-	me->equip(pf);
-	me->attack(b);
-	std::cout << *me;
-	me->equip(pr);
-	std::cout << *me;
-	me->attack(b);
-	std::cout << *me;
-	me->attack(b);
-	std::cout << *me;
-	return 0;
+	std::cout << "============ test1 ===========" << std::endl;
+	{
+		Animal*  animals[10] =
+		{
+			new Cat("a"),
+			new Cat("b"),
+			new Cat("c"),
+			new Cat("d"),
+			new Cat("e"),
+			new Dog("ab"),
+			new Dog("cd"),
+			new Dog("ef"),
+			new Dog("gh"),
+			new Dog("ij")
+		};
+
+		for (int i = 0; i < 10; i++)
+		{
+			animals[i]->makeSound();
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			delete animals[i];
+		}
+	}
+	std::cout << "============= test2 : deep Copy ===========" << std::endl;
+	{
+		Dog Doge("doge");
+		Dog copy_Doge(Doge);
+		Cat Kitty("Kitty");
+		Cat copy_Kitty(Kitty);
+
+		std::cout << "<Doge's address>" << std::endl;
+		std::cout << Doge.getBrain() << std::endl;
+		std::cout << "<Copy Doge's address>" << std::endl;
+		std::cout << copy_Doge.getBrain() << std::endl << std::endl;
+		std::cout << "<Kitty's address>" << std::endl;
+		std::cout << Kitty.getBrain() << std::endl;
+		std::cout << "<Copy Kitty's address" << std::endl;
+		std::cout << copy_Kitty.getBrain() << std::endl<<std::endl;
+	}
+	return (0);
 }
