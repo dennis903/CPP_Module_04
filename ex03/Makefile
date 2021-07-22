@@ -1,14 +1,13 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
-TARGET = ex00
+TARGET = ex02
 
-OBJS = Animal.cpp 	\
-		Dog.cpp \
-		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
+OBJS = AMateria.cpp \
+		Character.cpp \
+		Cure.cpp	\
+		Ice.cpp	\
+		MateriaSource.cpp \
 		main.cpp
-
 all : $(TARGET)
 
 $(TARGET) : $(OBJS)

@@ -1,32 +1,50 @@
-#include "ISquad.hpp"
-#include "ISpaceMarine.hpp"
-#include "Squad.hpp"
-#include "TacticalMarine.hpp"
-#include "AssaultTerminator.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-int main()
+int		main()
 {
-	ISpaceMarine* Marine = new TacticalMarine;
-	ISpaceMarine* Assault = new AssaultTerminator;
-	ISpaceMarine* Firebet = new TacticalMarine;
-	ISpaceMarine* Medic = new AssaultTerminator;
-	ISpaceMarine* SiegeTank = Assault->clone();
-	ISquad* First_Squad = new Squad;
-
-	First_Squad->push(Marine);
-	First_Squad->push(Assault);
-	First_Squad->push(Medic);
-	First_Squad->push(Firebet);
-	First_Squad->push(SiegeTank);
-
-	for (int i = 0; i < First_Squad->getCount(); i++)
+	std::cout << "============ test1 ===========" << std::endl;
 	{
-		std::cout << "=========" << i << " unit attack ========" << std::endl;
-		First_Squad->getUnit(i)->battleCry();
-		First_Squad->getUnit(i)->meleeAttack();
-		First_Squad->getUnit(i)->rangedAttack();
+		Animal*  animals[10] =
+		{
+			new Cat("a"),
+			new Cat("b"),
+			new Cat("c"),
+			new Cat("d"),
+			new Cat("e"),
+			new Dog("ab"),
+			new Dog("cd"),
+			new Dog("ef"),
+			new Dog("gh"),
+			new Dog("ij")
+		};
+		for (int i = 0; i < 10; i++)
+		{
+			animals[i]->makeSound();
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			delete animals[i];
+		}
 	}
+	std::cout << "============= test2 : deep Copy ===========" << std::endl;
+	{
+		Dog Doge("doge");
+		Dog copy_Doge(Doge);
+		Cat Kitty("Kitty");
+		Cat copy_Kitty(Kitty);
 
-	delete First_Squad;
-	return 0;
+		std::cout << "<Doge's address>" << std::endl;
+		std::cout << Doge.getBrain() << std::endl;
+		std::cout << "<Copy Doge's address>" << std::endl;
+		std::cout << copy_Doge.getBrain() << std::endl << std::endl;
+		std::cout << "<Kitty's address>" << std::endl;
+		std::cout << Kitty.getBrain() << std::endl;
+		std::cout << "<Copy Kitty's address" << std::endl;
+		std::cout << copy_Kitty.getBrain() << std::endl<<std::endl;
+	}
+	//Animal ani(); //Error occured this is abstract function;
+	return (0);
 }
