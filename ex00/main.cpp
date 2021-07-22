@@ -1,36 +1,33 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 21:35:13 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/07 22:19:33 by hyeolee          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include "Sorcerer.hpp"
-#include "Peon.hpp"
-#include "Victim.hpp"
-
-int			main()
+int		main()
 {
+
+	std::cout << "============ test1 ===========" << std::endl;
 	{
-		Sorcerer robert("Robert", "the Magnificent");
-		Victim jim("Jimmy");
-		Peon joe("Joe");
-		std::cout << robert << jim << joe;
-		robert.polymorph(jim);
-		robert.polymorph(joe);
+		const Animal* meta = new Animal();
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
+		delete meta;
+		delete j;
+		delete i;
 	}
-	std::cout << "=====================more tests======================" << std::endl;
+	std::cout << "============ test2 ===========" << std::endl;
 	{
-		Sorcerer Korea("Korea", "Manager");
-		Peon Japan("Japan");
-		Victim *China = &Japan;
-		Korea.polymorph(*China);
-		Korea.polymorph(Japan);
+		const Animal* doge = new Dog("Marie");
+		const Animal* kitty = new Cat("Aong");
+
+		doge->makeSound();
+		kitty->makeSound();
+		delete doge;
+		delete kitty;
 	}
 
 	return (0);
