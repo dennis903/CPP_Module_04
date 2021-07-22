@@ -17,7 +17,8 @@ Dog::Dog(const Dog &_Dog)
 	{
 		this->brain->setIdeas(i, _Dog.brain->getIdea(i));
 	}
-	*this = _Dog;
+	this->name = _Dog.name;
+	this->type = _Dog.type;
 	std::cout << this->type << " " << this->name << " is born" << std::endl;
 }
 
@@ -31,6 +32,11 @@ Dog&		Dog::operator = (const Dog &_Dog)
 {
 	if (this == &_Dog)
 		return (*this);
+	this->brain = new Brain;
+	for (int i = 0; i < 100; i++)
+	{
+		this->brain->setIdeas(i, _Dog.brain->getIdea(i));
+	}
 	this->name = _Dog.name;
 	this->type = _Dog.type;
 	return (*this);

@@ -46,5 +46,20 @@ int		main()
 		std::cout << "<Copy Kitty's address" << std::endl;
 		std::cout << copy_Kitty.getBrain() << std::endl<<std::endl;
 	}
+	std::cout << "============= test3 : brain test ===========" << std::endl;
+	{
+		Dog Doge("doge");
+		Dog copy_Doge("Copy_Doge");
+
+		Doge.getBrain()->setIdeas(0, "test1");
+		Doge.getBrain()->setIdeas(1, "test2");
+		std::cout << Doge.getBrain()->getIdea(0) << std::endl;
+		std::cout << Doge.getBrain()->getIdea(1) << std::endl;
+		copy_Doge = Doge;
+		copy_Doge.getBrain()->setIdeas(0, "test1");
+		copy_Doge.getBrain()->setIdeas(1, "test2");
+		std::cout << Doge.getBrain()->getIdea(0) << std::endl;
+		std::cout << Doge.getBrain()->getIdea(1) << std::endl;
+	}
 	return (0);
 }

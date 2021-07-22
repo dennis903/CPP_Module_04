@@ -19,4 +19,4 @@ clean :
 fclean : clean
 	rm -rf $(TARGET)
 
-re : clean all%
+re : clean all
